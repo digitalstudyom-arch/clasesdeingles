@@ -1,409 +1,123 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
+<html><meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clases de Inglés - Reserva tu Fecha</title>
+    <title>MEDICAL ZERO - Odontología</title>
     <style>
-        /* Estilos Generales */
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .container {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-            border-top: 5px solid #3498db; /* Azul para inglés */
-        }
-
-        h1 {
-            color: #333;
-            font-size: 1.4rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1rem;
-            text-align: left;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #666;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-sizing: border-box;
-            font-size: 1rem;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-
-        input:focus {
-            border-color: #3498db;
-        }
-
-        /* --- CALENDARIO PERSONALIZADO --- */
-        .calendario {
-            background: #fff;
-            border-radius: 12px;
-            margin-bottom: 1.5rem;
-            border: 1px solid #eee;
-            overflow: hidden;
-        }
-
-        .cabecera-calendario {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #3498db;
-            color: white;
-            padding: 15px;
-        }
-
-        .cabecera-calendario h3 {
-            margin: 0;
-            font-size: 1.1rem;
-        }
-
-        .btn-cambio {
-            background: rgba(255,255,255,0.2);
-            border: none;
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s;
-        }
-
-        .btn-cambio:hover {
-            background: rgba(255,255,255,0.4);
-        }
-
-        .dias-semana {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            background: #f8f8f8;
-            padding: 10px 5px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .dias-semana span {
-            font-size: 0.75rem;
-            color: #888;
-            font-weight: bold;
-        }
-
-        .dias-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            padding: 10px;
-            gap: 5px;
-        }
-
-        .dia {
-            aspect-ratio: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .dia:hover:not(.vacio):not(.deshabilitado) {
-            background-color: #e3f2fd;
-            color: #3498db;
-        }
-
-        .dia.seleccionado {
-            background-color: #3498db;
-            color: white;
-            font-weight: bold;
-        }
-
-        .dia.hoy {
-            border: 1px solid #3498db;
-            color: #3498db;
-        }
-
-        .dia.vacio {
-            cursor: default;
-        }
-
-        .dia.deshabilitado {
-            color: #ccc;
-            cursor: not-allowed;
-        }
-
-        /* Fecha seleccionada mostrada */
-        .fecha-seleccionada-box {
-            background: #f9f9f9;
-            padding: 10px;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            text-align: center;
-            color: #333;
-            font-weight: 500;
-        }
-
-        /* Botón WhatsApp */
-        .btn-whatsapp {
-            background-color: #25D366;
-            color: white;
-            border: none;
-            padding: 15px;
-            width: 100%;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-
-        .btn-whatsapp:hover {
-            background-color: #20b558;
-        }
-
-        .btn-whatsapp:disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
-        }
-
-        .icono-wa {
-            width: 24px;
-            height: 24px;
-            fill: white;
-        }
-        
-        .nota {
-            font-size: 0.8rem;
-            color: #888;
-            margin-top: 1rem;
-        }
+        *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+        body{background:#064e3b;min-height:100vh;padding:20px}
+        .app{max-width:500px;margin:0 auto;background:#fff;border-radius:15px;overflow:hidden}
+        .header{background:linear-gradient(#047857,#059669);color:#fff;padding:20px;text-align:center}
+        .header h1{font-size:1.8rem;letter-spacing:3px}
+        .header p{font-size:0.9rem;opacity:0.9}
+        .content{padding:20px}
+        h2{color:#047857;margin-bottom:15px;font-size:1rem}
+        .consigna{background:#ecfdf5;border:2px solid #047857;border-radius:8px;padding:12px;margin-bottom:15px;text-align:center;color:#064e3b;font-size:0.85rem;line-height:1.4}
+        .calendar{background:#f8fafc;border-radius:10px;padding:15px;margin-bottom:20px}
+        .cal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}
+        .cal-header h3{color:#064e3b;font-size:1.1rem}
+        .nav{background:#047857;color:#fff;border:none;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:1rem}
+        .weekdays{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin-bottom:8px}
+        .weekday{text-align:center;font-weight:bold;color:#6b7280;font-size:0.75rem}
+        .days{display:grid;grid-template-columns:repeat(5,1fr);gap:5px}
+        .day{padding:12px 5px;display:flex;flex-direction:column;align-items:center;border-radius:8px;cursor:pointer;background:#fff;border:2px solid #e5e7eb;font-weight:bold;font-size:0.9rem}
+        .day:hover:not(.disabled){border-color:#047857;background:#ecfdf5}
+        .day.selected{background:#047857;border-color:#047857;color:#fff}
+        .day.disabled{background:#f3f4f6;color:#9ca3af;cursor:not-allowed}
+        .day span{font-size:0.65rem;font-weight:normal}
+        .times{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+        .time{padding:10px;background:#fff;border:2px solid #d1fae5;border-radius:8px;text-align:center;cursor:pointer;font-weight:bold;color:#065f46;font-size:0.85rem}
+        .time:hover{background:#ecfdf5}
+        .hidden{display:none}
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <h1>📅 Reserva tu Clase de Inglés</h1>
-        
-        <div class="form-group">
-            <label for="nombre">Tu Nombre</label>
-            <input type="text" id="nombre" placeholder="Ej: Micaela Gonzalez">
-        </div>
-
-        <!-- Calendario Visual -->
-        <div class="calendario">
-            <div class="cabecera-calendario">
-                <button class="btn-cambio" id="mes-anterior">&#8249;</button>
-                <h3 id="mes-actual">Febrero 2025</h3>
-                <button class="btn-cambio" id="mes-siguiente">&#8250;</button>
+<div class="app">
+    <header class="header">
+        <h1>MEDICAL ZERO</h1>
+        <p>Odontología</p>
+    </header>
+    <div class="content">
+        <div class="consigna">Selecciona el día y el horario para redirigirte al WhatsApp y terminar de confirmar con nuestra asesora.</div>
+        <div class="calendar">
+            <div class="cal-header">
+                <button class="nav" onclick="changeMonth(-1)">◀</button>
+                <h3 id="monthLabel"></h3>
+                <button class="nav" onclick="changeMonth(1)">▶</button>
             </div>
-            
-            <div class="dias-semana">
-                <span>Dom</span><span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span>
-            </div>
-            
-            <div class="dias-grid" id="dias-grid">
-                <!-- Los días se generan con JavaScript -->
-            </div>
+            <div class="weekdays"><span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span></div>
+            <div class="days" id="calendar"></div>
         </div>
-
-        <div class="fecha-seleccionada-box" id="fecha-display">
-            Selecciona una fecha en el calendario
+        <div id="timesSection" class="hidden">
+            <h2 id="dateLabel">Seleccioná un horario</h2>
+            <div class="times" id="times"></div>
         </div>
-
-        <button class="btn-whatsapp" id="btn-reservar" onclick="enviarMensaje()" disabled>
-            <svg class="icono-wa" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            Reservar por WhatsApp
-        </button>
-        
-        <p class="nota">Al hacer clic, se abrirá WhatsApp con tu mensaje.</p>
     </div>
+</div>
+<script>
+const phone="5491112345678";
+let curYear=new Date().getFullYear(),curMonth=new Date().getMonth();
+let selectedDate=null,selectedDayName=null;
 
-    <script>
-        // ================= CONFIGURACIÓN =================
-        // CAMBIA ESTE NÚMERO por el tuyo (código país + número)
-        // Ejemplo: "34600112233" para España
-        const numeroTelefono = "TU_NUMERO_AQUI"; 
-        // ====================================================
+function init(){renderCalendar();}
 
-        // Variables globales
-        let fechaActual = new Date();
-        let fechaSeleccionada = null;
-
-        const mesesNombres = [
-            "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-            "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
-        ];
-
-        // Elementos del DOM
-        const mesActualEl = document.getElementById('mes-actual');
-        const diasGridEl = document.getElementById('dias-grid');
-        const fechaDisplayEl = document.getElementById('fecha-display');
-        const btnReservar = document.getElementById('btn-reservar');
-
-        // Inicializar calendario
-        function renderizarCalendario() {
-            const año = fechaActual.getFullYear();
-            const mes = fechaActual.getMonth(); // 0 = Enero
-
-            // Actualizar encabezado
-            mesActualEl.textContent = `${mesesNombres[mes]} ${año}`;
-
-            // Primer día del mes (0 = Domingo, 1 = Lunes...)
-            const primerDiaMes = new Date(año, mes, 1).getDay();
-            
-            // Total de días en el mes
-            const diasEnMes = new Date(año, mes + 1, 0).getDate();
-
-            // Fecha de hoy para destacar
-            const hoy = new Date();
-            const esMesActual = (año === hoy.getFullYear() && mes === hoy.getMonth());
-            const diaHoy = hoy.getDate();
-
-            // Limpiar grid
-            diasGridEl.innerHTML = '';
-
-            // Añadir espacios vacíos para los días antes del día 1
-            for (let i = 0; i < primerDiaMes; i++) {
-                const vacio = document.createElement('div');
-                vacio.className = 'dia vacio';
-                diasGridEl.appendChild(vacio);
-            }
-
-            // Generar días
-            for (let dia = 1; dia <= diasEnMes; dia++) {
-                const diaEl = document.createElement('div');
-                diaEl.className = 'dia';
-                diaEl.textContent = dia;
-
-                // Verificar si es el día de hoy
-                if (esMesActual && dia === diaHoy) {
-                    diaEl.classList.add('hoy');
-                }
-
-                // Verificar si la fecha ya pasó (no permitir fechas pasadas)
-                const fechaComparar = new Date(año, mes, dia);
-                fechaComparar.setHours(0, 0, 0, 0);
-                
-                const fechaMinima = new Date();
-                fechaMinima.setDate(fechaMinima.getDate()); // Hoy
-                fechaMinima.setHours(0, 0, 0, 0);
-
-                if (fechaComparar < fechaMinima) {
-                    diaEl.classList.add('deshabilitado');
-                } else {
-                    // Evento click para seleccionar
-                    diaEl.addEventListener('click', () => seleccionarFecha(dia, mes, año));
-                }
-
-                // Resaltar fecha seleccionada
-                if (fechaSeleccionada && 
-                    fechaSeleccionada.dia === dia && 
-                    fechaSeleccionada.mes === mes && 
-                    fechaSeleccionada.año === año) {
-                    diaEl.classList.add('seleccionado');
-                }
-
-                diasGridEl.appendChild(diaEl);
-            }
+function renderCalendar(){
+    const months=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+    document.getElementById('monthLabel').innerText=`${months[curMonth]} ${curYear}`;
+    const cal=document.getElementById('calendar');
+    cal.innerHTML='';
+    const firstDay=new Date(curYear,curMonth,1).getDay();
+    const lastDay=new Date(curYear,curMonth+1,0).getDate();
+    const blanks=firstDay===0?6:firstDay-1;
+    for(let i=0;i<blanks;i++){const d=document.createElement('div');d.className='day disabled';cal.appendChild(d);}
+    for(let d=1;d<=lastDay;d++){
+        const date=new Date(curYear,curMonth,d);
+        if(date.getDay()!==0&&date.getDay()!==6){
+            const cell=document.createElement('div');
+            cell.className='day';
+            const dayNames=['Lunes','Martes','Miércoles','Jueves','Viernes'];
+            cell.innerHTML=`${d}<span>${dayNames[date.getDay()-1]}</span>`;
+            const dateStr=`${curYear}-${String(curMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+            cell.onclick=()=>selectDate(dateStr,dayNames[date.getDay()-1],d,cell);
+            if(dateStr===selectedDate)cell.classList.add('selected');
+            cal.appendChild(cell);
         }
+    }
+}
 
-        // Función para seleccionar fecha
-        function seleccionarFecha(dia, mes, año) {
-            fechaSeleccionada = { dia, mes, año };
-            
-            // Formatear fecha para mostrar
-            const fechaObj = new Date(año, mes, dia);
-            const opciones = { year: 'numeric', month: 'long', day: 'numeric' };
-            const fechaFormateada = fechaObj.toLocaleDateString('es-ES', opciones);
-            
-            fechaDisplayEl.textContent = `📌 Fecha seleccionada: ${fechaFormateada}`;
-            fechaDisplayEl.style.background = "#e8f5e9";
-            fechaDisplayEl.style.color = "#2e7d32";
-            
-            // Habilitar botón
-            btnReservar.disabled = false;
-            
-            // Re-renderizar para actualizar estilo
-            renderizarCalendario();
-        }
+function changeMonth(delta){
+    curMonth+=delta;
+    if(curMonth>11){curMonth=0;curYear++;}
+    if(curMonth<0){curMonth=11;curYear--;}
+    renderCalendar();
+}
 
-        // Botones de navegación
-        document.getElementById('mes-anterior').addEventListener('click', () => {
-            fechaActual.setMonth(fechaActual.getMonth() - 1);
-            renderizarCalendario();
-        });
+function selectDate(date,dayName,dayNum,el){
+    document.querySelectorAll('.day').forEach(d=>d.classList.remove('selected'));
+    el.classList.add('selected');
+    selectedDate=date;
+    selectedDayName=dayName;
+    document.getElementById('dateLabel').innerText=`${dayName} ${dayNum} - Horarios disponibles`;
+    renderTimes();
+}
 
-        document.getElementById('mes-siguiente').addEventListener('click', () => {
-            fechaActual.setMonth(fechaActual.getMonth() + 1);
-            renderizarCalendario();
-        });
+function renderTimes(){
+    document.getElementById('timesSection').classList.remove('hidden');
+    const tDiv=document.getElementById('times');
+    tDiv.innerHTML='';
+    for(let h=10;h<17;h++){
+        const time=`${h}:00`;
+        const btn=document.createElement('div');
+        btn.className='time';
+        btn.innerText=time;
+        btn.onclick=()=>openWhatsApp(time);
+        tDiv.appendChild(btn);
+    }
+}
 
-        // Función para enviar mensaje
-        function enviarMensaje() {
-            const nombre = document.getElementById('nombre').value;
-
-            if (!nombre) {
-                alert("Por favor, introduce tu nombre.");
-                return;
-            }
-
-            if (!fechaSeleccionada) {
-                alert("Por favor, selecciona una fecha.");
-                return;
-            }
-
-            // Formatear fecha
-            const fechaObj = new Date(fechaSeleccionada.año, fechaSeleccionada.mes, fechaSeleccionada.dia);
-            const opciones = { year: 'numeric', month: 'long', day: 'numeric' };
-            const fechaFormateada = fechaObj.toLocaleDateString('es-ES', opciones);
-
-            // Crear mensaje
-            const textoMensaje = `Hola, me llamo *${nombre}*. Estoy interesado/a en clases particulares de inglés y me gustaría empezar el *${fechaFormateada}*. ¿Tienen disponibilidad?`;
-            
-            // Codificar y abrir WhatsApp
-            const urlWhatsapp = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(textoMensaje)}`;
-            window.open(urlWhatsapp, '_blank');
-        }
-
-        // Iniciar
-        renderizarCalendario();
-    </script>
-
+function openWhatsApp(time){
+    const msg=`Hola! Quiero reservar un turno en MEDICAL ZERO para el día ${selectedDate} (${selectedDayName}) a las ${time}. Mi nombre es:`;
+    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`,'_blank');
+}
+init();
+</script>
 </body>
 </html>
